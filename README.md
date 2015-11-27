@@ -8,7 +8,7 @@ An element that provides a scroll up animation as the content is scrolled into v
 
 # Demo and Documentation
 
-    http://vision89.github.io/scroll-up/components/scroll-up/
+  http://vision89.github.io/scroll-up/components/scroll-up/
     
 # License
 
