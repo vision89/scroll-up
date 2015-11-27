@@ -1,0 +1,32 @@
+{
+  "name": "scroll-up",
+  "version": "1.0.0",
+  "authors": [
+    "Dustin Gulley <dlgulley411@gmail.com>"
+  ],
+  "description": "An element that provides scroll up animation for content as it is scrolled into view.",
+  "keywords": [
+    "web-component",
+    "polymer",
+    "seed"
+  ],
+  "main": "seed-element.html",
+  "license": "http://polymer.github.io/LICENSE.txt",
+  "homepage": "https://github.com/<USERNAME>/seed-element/",
+  "ignore": [
+    "/.*",
+    "/test/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.2.0",
+    "velocity": "https://github.com/julianshapiro/velocity.git#~1.2.3",
+    "bower": "*",
+    "install": "~1.0.4",
+    "paper-card": "PolymerElements/paper-card#~1.0.7",
+    "waypoints": "~4.0.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "web-component-tester": "*"
+  }
+}
