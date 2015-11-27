@@ -1,0 +1,117 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<script src="../velocity/velocity.min.js"></script>
+<script src="../velocity/velocity.ui.min.js"></script>
+<script src="../waypoints/lib/noframework.waypoints.min.js"></script>
+
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+Scrolls content up as you scroll down
+
+Example:
+
+    <scroll-up>
+    
+      <content> ... </content>
+    
+    </scroll-up>
+
+@group Seed Elements
+@element seed-element
+@demo demo/index.html
+@hero hero.svg
+-->
+
+<dom-module id="scroll-up">
+  
+  <template>
+    
+    <style>
+    
+      :host {
+        display: block;
+        box-sizing: border-box;
+      }
+
+    </style>
+    
+    <div id="scrollable">
+      
+      <content></content>
+      
+    </div>
+
+  </template>
+
+  <script>
+  
+    Polymer({
+      
+      is: 'scroll-up',
+
+      properties: {
+
+      },
+
+      // Element Lifecycle
+
+      ready: function() {
+        // `ready` is called after all elements have been configured, but
+        // propagates bottom-up. This element's children are ready, but parents
+        // are not.
+        //
+        // This is the point where you should make modifications to the DOM (when
+        // necessary), or kick off any processes the element wants to perform.
+        
+        Velocity( this.$.scrollable, { opacity: 0 } );
+        
+      },
+
+      attached: function() {
+        // `attached` fires once the element and its parents have been inserted
+        // into a document.
+        //
+        // This is a good place to perform any work related to your element's
+        // visual state or active behavior (measuring sizes, beginning animations,
+        // loading resources, etc).
+        
+        var that = this;
+        
+        var waypoint = new Waypoint({
+          
+          element: that.$.scrollable,
+          handler: function () {
+            
+            Velocity( that.$.scrollable, 'transition.slideUpBigIn', { duration: 1000 } );
+            Velocity( that.$.scrollable, { opacity: 1 } );
+            
+            waypoint.destroy();
+            
+          },
+          offset: '99%'
+          
+        });
+        
+      },
+
+      detached: function() {
+        // The analog to `attached`, `detached` fires when the element has been
+        // removed from a document.
+        //
+        // Use this to clean up anything you did in `attached`.
+      }
+      
+    });
+    
+  </script>
+  
+</dom-module>
