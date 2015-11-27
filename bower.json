@@ -8,7 +8,8 @@
   "keywords": [
     "web-component",
     "polymer",
-    "seed"
+    "seed",
+    "web-components"
   ],
   "main": "seed-element.html",
   "license": "http://polymer.github.io/LICENSE.txt",
